@@ -9,3 +9,8 @@ Account.prototype.deposit = function(money){
   this.balance += money;
   this.record.push({date : new Date(), value : money});
 };
+
+Account.prototype.withdraw = function(money){
+  this.balance -= money;
+  this.record.push({date : new Date(), value : -money});
+};
