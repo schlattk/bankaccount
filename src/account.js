@@ -12,5 +12,5 @@ Account.prototype.deposit = function(money){
 
 Account.prototype.withdraw = function(money){
   this.balance -= money;
-  this.record.push({date : new Date(), credit : "     ", debit : -money, balance : this.balance});
+  this.record.push({date : new Date(), credit : "     ", debit : money, balance : this.balance});
 };

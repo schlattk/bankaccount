@@ -19,6 +19,11 @@ describe('deposit money', function(){
     it('adds the deposit and the time in the record', function(){
     expect(account.record[0].date).toEqual(jasmine.any(Date));
     });
+    it('adds consecutive dates to the record', function(){
+    account.deposit(0);
+    expect(account.record[1].date).toBeGreaterThan(account.record[0].date);
+    });
+
 });
 
 describe('withdraw money', function(){
