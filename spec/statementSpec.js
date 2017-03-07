@@ -8,4 +8,5 @@ describe('statement', function(){
       Statement.print(myacc);
       expect(console.log).toHaveBeenCalledWith("date    || credit || debit || balance");
     });
+
 });

@@ -12,7 +12,7 @@ var Statement = (function (){
     var length = account.record.length;
     for (var i=0;i<length;i++){
       var item = account.record[i];
-      console.log(formatDate(item.date) + "|| " + item.credit + " || " + item.debit + " || " + item.balance);
+      console.log(formatDate(item.date) + "||  " + item.credit + "  || " + item.debit + "  || " + item.balance);
     }
   };
   return {print:print};
