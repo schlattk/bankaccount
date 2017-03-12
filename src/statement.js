@@ -13,7 +13,7 @@ var Statement = (function (){
     for (var i=0;i<length;i++){
       var item = account.record[i];
       console.log(formatDate(item.date) + "||  " + item.credit + "  || " + item.debit + "  || " + item.balance);
-    }
+      }
   };
   return {print:print};
 })();

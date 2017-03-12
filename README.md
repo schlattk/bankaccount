@@ -15,6 +15,18 @@ date       || credit || debit   || balance
 13/01/2012 || 2000.00||         || 3000.00
 10/01/2012 || 1000.00||         || 1000.00
 
+Implemented in Ruby using 2 classes:
+
+Account: this class has the balance, the account-history as well as the ability to
+withdraw and deposit money.
+Statement: provides the ability and formatting for printing the statement.
+It is passes into Account as an argument.
+
+This implemented using the prototype constructor pattern as well as the revealing
+module patter for the statement module. The idea is for this module to be reusable
+by other types of accounts.
+
+
 Console instructions are as below:
 
 myacc = new Account();
