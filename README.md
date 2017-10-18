@@ -15,7 +15,7 @@ date       || credit || debit   || balance
 13/01/2012 || 2000.00||         || 3000.00
 10/01/2012 || 1000.00||         || 1000.00
 
-Implemented in Ruby using 2 classes:
+Implemented in Javascript using 2 classes:
 
 Account: this class has the balance, the account-history as well as the ability to
 withdraw and deposit money.
