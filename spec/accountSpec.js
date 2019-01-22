@@ -23,7 +23,7 @@ describe('deposits and withdrawals can be made', () => {
       account.withdraw(2000);
       expect(account.balance()).toEqual(-2000);
   });
-  it('calculates the correcct balance', () => {
+  it('calculates the correct balance', () => {
       let account = new Account();
       account.withdraw(2000);
       account.deposit(1000);
@@ -31,6 +31,17 @@ describe('deposits and withdrawals can be made', () => {
       account.deposit(5000);
       expect(account.balance()).toEqual(3500);
   });
-
-
+});
+  describe('it has a print method', () => {
+    it('has a print method', () => {
+      let account = new Account();
+      expect(account.print).toBeDefined();
+    });
+    it('logs to the console', () => {
+      let account = new Account();
+      spyOn(console, 'log');
+      account.print();
+      expect(console.log).toHaveBeenCalled();
+      expect(console.log).toHaveBeenCalledWith("  date    ||  credit   ||  debit   ||  balance");
+    });
 });

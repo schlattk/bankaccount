@@ -7,12 +7,13 @@ class Format {
     return day + '/' + month + '/' + year;
   };
   static statement(record){
-
     console.log("  date    ||  credit   ||  debit   ||  balance");
-    record.history.forEach(function(item){
+    record.forEach(function(item){
       let credit = '       ';
       let debit = '       ';
-      item.amount >= 0 ? credit = item.amount.toFixed(2) : debit = Math.abs(item.amount).toFixed(2);
+      item.amount >= 0 ?
+      credit = item.amount.toFixed(2)
+      : debit = Math.abs(item.amount).toFixed(2);
       console.log(item.date + "||  " + credit + "  || " + debit + "  || " + item.balance.toFixed(2));
       }
     );

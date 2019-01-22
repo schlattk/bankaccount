@@ -7,6 +7,8 @@ class Record {
     return amounts.reduce((a, b) => a + b, 0)
   };
   add(amount) {
-    this.history.push({ date: Format.date(new Date()), amount: amount, balance: this.balance() + amount });
+    let balance = this.balance() + amount;
+    let date = Format.date(new Date());
+    this.history.push({ date: date, amount: amount, balance: balance });
   };
 };

@@ -11,7 +11,7 @@ class Account {
   withdraw (amount) {
     this.account.add(amount * -1);
   };
-  print (account){
-    Format.statement(this.account);
+  print (){
+    Format.statement(this.account.history);
   };
 };
