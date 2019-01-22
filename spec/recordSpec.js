@@ -16,12 +16,13 @@ describe('record', () => {
       record.add(1000);
       expect(record.balance()).toEqual(1000);
   });
-  // it('keeps a history with a date', () => {
-  //     let record = new Record();
-  //     record.add(1000);
-  //     record.add(-1000);
-  //     expect(record.history).toEqual([{date: 20190122, amount: 0 },
-  //     {date: 20190122, amount:1000}, {date: 20190122, amount: -1000}]);
-  // });
+  it('keeps a history with a date', () => {
+      spyOn(Format, 'date').and.returnValue("23/01/2019");
+      let record = new Record();
+      record.add(1000);
+      record.add(-1000);
+      expect(record.history).toEqual([
+      {date: "23/01/2019", amount:1000, balance: 1000}, {date: "23/01/2019", amount: -1000, balance: 0 }]);
+  });
 
 });

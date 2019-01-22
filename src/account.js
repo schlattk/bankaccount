@@ -1,6 +1,6 @@
 class Account {
-  constructor (open = 0) {
-    this.account = new Record(open);
+  constructor () {
+    this.account = new Record();
   };
   balance () {
     return this.account.balance();
@@ -10,5 +10,8 @@ class Account {
   };
   withdraw (amount) {
     this.account.add(amount * -1);
+  };
+  print (account){
+    Format.statement(this.account);
   };
 };

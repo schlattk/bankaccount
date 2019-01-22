@@ -3,14 +3,6 @@ describe('account balance', () => {
       let account = new Account();
       expect(account.balance).toBeDefined();
   });
-  it('has a default balance', () => {
-      let account = new Account();
-      expect(account.balance()).toEqual(0);
-  });
-  it('can be set up with a balance', () => {
-      let account = new Account(1000);
-      expect(account.balance()).toEqual(1000);
-  });
 });
 describe('deposits and withdrawals can be made', () => {
   it('has a deposit method', () => {
