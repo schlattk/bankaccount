@@ -1,13 +1,11 @@
 class Record {
-  constructor () {
-    this.history = [];
+  constructor (open = 0) {
+    this.history = [open];
   };
-  get balance() {
-    return this.calcBalance()
+  balance() {
+    return this.history.reduce((a, b) => a + b, 0)
   };
-
-  calcBalance() {
-    this.history.reduce((a, b) => a + b, 0)
+  add(amount) {
+    this.history.push(amount)
   };
-
 };

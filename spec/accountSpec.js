@@ -5,11 +5,11 @@ describe('account balance', () => {
   });
   it('has a default balance', () => {
       let account = new Account();
-      expect(account.balance).toEqual(0);
+      expect(account.balance()).toEqual(0);
   });
   it('can be set up with a balance', () => {
       let account = new Account(1000);
-      expect(account.balance).toEqual(1000);
+      expect(account.balance()).toEqual(1000);
   });
 });
 describe('deposits and withdrawals can be made', () => {
@@ -20,7 +20,7 @@ describe('deposits and withdrawals can be made', () => {
   it('deposits increase the balance', () => {
       let account = new Account();
       account.deposit(2000);
-      expect(account.balance).toEqual(2000);
+      expect(account.balance()).toEqual(2000);
   });
   it('has a withdraw method', () => {
       let account = new Account();
@@ -29,7 +29,15 @@ describe('deposits and withdrawals can be made', () => {
   it('withdrawals lower the balance', () => {
       let account = new Account();
       account.withdraw(2000);
-      expect(account.balance).toEqual(-2000);
+      expect(account.balance()).toEqual(-2000);
+  });
+  it('calculates the correcct balance', () => {
+      let account = new Account();
+      account.withdraw(2000);
+      account.deposit(1000);
+      account.withdraw(500);
+      account.deposit(5000);
+      expect(account.balance()).toEqual(3500);
   });
 
 

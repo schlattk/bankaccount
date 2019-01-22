@@ -1,13 +1,14 @@
-'use strict';
-
 class Account {
-  constructor (balance = 0) {
-    this.balance = balance;
+  constructor (open = 0) {
+    this.account = new Record(open);
   };
+  balance () {
+    return this.account.balance();
+  }
   deposit (amount) {
-    this.balance += amount;
+    this.account.add(amount);
   };
   withdraw (amount) {
-    this.balance -= amount;
+    this.account.add(amount * -1);
   };
 };
