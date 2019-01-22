@@ -8,12 +8,12 @@ class Format {
   };
   static statement(record){
 
-    console.log("  date    || credit || debit || balance");
+    console.log("  date    ||  credit   ||  debit   ||  balance");
     record.history.forEach(function(item){
-      let credit = '    ';
-      let debit = '    ';
-      item.amount >= 0 ? credit = item.amount : debit = Math.abs(item.amount);
-      console.log(item.date + "||  " + credit + "  || " + debit + "  || " + item.balance);
+      let credit = '       ';
+      let debit = '       ';
+      item.amount >= 0 ? credit = item.amount.toFixed(2) : debit = Math.abs(item.amount).toFixed(2);
+      console.log(item.date + "||  " + credit + "  || " + debit + "  || " + item.balance.toFixed(2));
       }
     );
   };
