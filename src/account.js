@@ -1,17 +1,18 @@
-class Account {
-  constructor () {
-    this.account = new Record();
+class BankAccount {
+  constructor (record, format) {
+    this.record = record;
+    this.format = format;
   };
   balance () {
-    return this.account.balance();
+    return this.record.balance();
   }
   deposit (amount) {
-    this.account.add(amount);
+    this.record.add(amount);
   };
   withdraw (amount) {
-    this.account.add(amount * -1);
+    this.record.add(amount * -1);
   };
   print (){
-    Format.statement(this.account.history);
+    this.format.statement(this.record.history);
   };
 };

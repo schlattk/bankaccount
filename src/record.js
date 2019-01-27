@@ -1,6 +1,7 @@
 class Record {
-  constructor () {
+  constructor (format) {
     this.history = [];
+    this.format = format;
   };
   balance() {
     const amounts = this.history.map(item => item.amount);
@@ -8,7 +9,7 @@ class Record {
   };
   add(amount) {
     let balance = this.balance() + amount;
-    let date = Format.date(new Date());
+    let date = this.format.date(new Date());
     this.history.push({ date: date, amount: amount, balance: balance });
   };
 };

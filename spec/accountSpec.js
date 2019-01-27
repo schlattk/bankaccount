@@ -1,68 +1,67 @@
-it('instantiates a record class', () => {
-    let account = new Account();
-    expect(account.account).toEqual(jasmine.any(Record));
-});
-describe('account balance', () => {
+describe('bankAccount balance', () => {
   it('exists and has a balance method', () => {
-      let account = new Account();
-      expect(account.balance).toBeDefined();
+      let record = new Record(Format);
+      let bankAccount = new BankAccount(record, Format);
+      expect(bankAccount.balance).toBeDefined();
   });
-  it('calls balance on the record class with account.balance', () => {
-      let account = new Account();
-      spyOn(account.account, 'balance');
-      account.withdraw(1000);
-      expect(account.account.balance).toHaveBeenCalled();
+  it('calls balance on the record class with bankAccount.balance', () => {
+      let record = new Record(Format);
+      let bankAccount = new BankAccount(record, Format);
+      spyOn(bankAccount.record, 'balance');
+      bankAccount.withdraw(1000);
+      expect(bankAccount.record.balance).toHaveBeenCalled();
   });
   it('deposits increase the balance', () => {
-      let account = new Account();
-      account.deposit(2000);
-      expect(account.balance()).toEqual(2000);
+      let record = new Record(Format);
+      let bankAccount = new BankAccount(record, Format);
+      bankAccount.deposit(2000);
+      expect(bankAccount.balance()).toEqual(2000);
   });
   it('withdrawals lower the balance', () => {
-      let account = new Account();
-      account.withdraw(2000);
-      expect(account.balance()).toEqual(-2000);
+      let record = new Record(Format);
+      let bankAccount = new BankAccount(record, Format);
+      bankAccount.withdraw(2000);
+      expect(bankAccount.balance()).toEqual(-2000);
   });
   it('calculates the correct balance', () => {
-      let account = new Account();
-      account.withdraw(2000);
-      account.deposit(1000);
-      account.withdraw(500);
-      account.deposit(5000);
-      expect(account.balance()).toEqual(3500);
+      let record = new Record(Format);
+      let bankAccount = new BankAccount(record, Format);
+      bankAccount.withdraw(2000);
+      bankAccount.deposit(1000);
+      bankAccount.withdraw(500);
+      bankAccount.deposit(5000);
+      expect(bankAccount.balance()).toEqual(3500);
   });
 });
 describe('deposits and withdrawals can be made', () => {
+    let record = new Record(Format);
+    const bankAccount = new BankAccount(record, Format);
   it('has a deposit method', () => {
-      let account = new Account();
-      expect(account.deposit).toBeDefined();
+      expect(bankAccount.deposit).toBeDefined();
   });
   it('has a withdraw method', () => {
-      let account = new Account();
-      expect(account.withdraw).toBeDefined();
+      expect(bankAccount.withdraw).toBeDefined();
   });
   it('calls add on the record class with deposit', () => {
-      let account = new Account();
-      spyOn(account.account, 'add');
-      account.deposit(2000);
-      expect(account.account.add).toHaveBeenCalledWith(2000);
+      spyOn(bankAccount.record, 'add');
+      bankAccount.deposit(2000);
+      expect(bankAccount.record.add).toHaveBeenCalledWith(2000);
   });
   it('calls add on the record class with withdraw', () => {
-      let account = new Account();
-      spyOn(account.account, 'add');
-      account.withdraw(1000);
-      expect(account.account.add).toHaveBeenCalledWith(-1000);
+      spyOn(bankAccount.record, 'add');
+      bankAccount.withdraw(1000);
+      expect(bankAccount.record.add).toHaveBeenCalledWith(-1000);
   });
 });
 describe('it has a print method', () => {
+    record = new Record(Format);
+    const bankAccount = new BankAccount(record, Format);
     it('has a print method', () => {
-      let account = new Account();
-      expect(account.print).toBeDefined();
+      expect(bankAccount.print).toBeDefined();
     });
     it('calls the format class', () => {
-      let account = new Account();
       spyOn(Format, 'statement');
-      account.print();
+      bankAccount.print();
       expect(Format.statement).toHaveBeenCalled();
     });
 });

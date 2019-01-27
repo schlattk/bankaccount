@@ -11,9 +11,8 @@ class Format {
     record.forEach(function(item){
       let credit = '       ';
       let debit = '       ';
-      item.amount >= 0 ?
-      credit = item.amount.toFixed(2)
-      : debit = Math.abs(item.amount).toFixed(2);
+      if(item.amount >= 0) { credit = item.amount.toFixed(2) }
+      else { debit = Math.abs(item.amount).toFixed(2) };
       console.log(item.date + "||  " + credit + "  || " + debit + "  || " + item.balance.toFixed(2));
       }
     );
