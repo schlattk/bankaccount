@@ -1,3 +1,3 @@
-it('instantiates a record class', () => {
-    expect(record).toEqual(jasmine.any(Record));
+it('instantiates a ledger class', () => {
+    expect(ledger).toEqual(jasmine.any(Ledger));
 });

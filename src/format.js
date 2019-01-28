@@ -3,6 +3,7 @@ class Format {
     let day = today.getDate().toString();
     let month = (today.getMonth() + 1).toString();
     let year = today.getFullYear().toString();
+    if (day.length === 1) {day = '0' + month};
     if (month.length === 1) {month = '0' + month};
     return day + '/' + month + '/' + year;
   };

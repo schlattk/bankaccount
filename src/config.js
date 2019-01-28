@@ -1,1 +1,1 @@
-let record = new Record(Format);
+let ledger = new Ledger(Format);
