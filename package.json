@@ -1,0 +1,26 @@
+{
+  "name": "bank_account",
+  "version": "1.0.0",
+  "description": "bank tech test User Stories:",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schlattk/bankaccount.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/schlattk/bankaccount/issues"
+  },
+  "homepage": "https://github.com/schlattk/bankaccount#readme",
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-plugin-jasmine": "^2.10.1"
+  }
+}

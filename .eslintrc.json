@@ -1,0 +1,23 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": false,
+        "jasmine": true
+    },
+    "extends": [ "eslint:recommended", "plugin:jasmine/recommended" ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules": {
+      "no-undef": "off",
+      "no-unused-vars": "off",
+      "no-console": "off",
+      "jasmine/prefer-toHaveBeenCalledWith": "off"
+    },
+    "plugins": [ "jasmine" ]
+}
